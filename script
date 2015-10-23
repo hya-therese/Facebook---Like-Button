@@ -1,0 +1,40 @@
+var imgMySrc = "mord2.png";
+var imgGotSrc = "mord2.png";
+
+$(document).ready(function () {
+
+    console.log("woo");
+    $('#hya .upper .user img').attr('src', imgGotSrc)
+    $('#hya .upper .content').text("learning jquery is a lot of FUN!!!!!")
+  
+    $('#hya .upper .content').append('<img src="' + imgGotSrc + '"/>');
+    $('#hya .upper .content img').addClass('content-img');
+    var dot = '&#149';
+
+    $('#hya .upper .user .name .time .minutes').html('45 mins ' + dot).append(' Edited')
+    $('.options').css('margin-left', '290px')
+    $('.actions .action').addClass('pointer');
+
+    $('#my-like-btn').click(function () {
+
+        var likes = $('.info-link-count').text();
+        var obj = $('#my-like-btn span');
+
+        if(obj.text() ===  "Unlike")
+        {
+            obj.html('Like');
+            $('#my-like-btn i, #my-like-btn span').removeClass('i-liked');
+            likes--;
+        }
+        else
+        {
+            obj.html('Unlike');
+            $('#my-like-btn i, #my-like-btn span').addClass('i-liked');
+            likes++;
+        }     
+
+        $('.info-link-count').text(likes); 
+        });
+    
+});
+
